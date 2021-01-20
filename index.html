@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="Ekzamen">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Екзаменаційна робота</title>
+</head>
+<body>
+<h2 align="center">Каталог йогуртів</h2>
+    <div ng-controller="Controller as listBuy"   id="toBuyBlock">
+        <div class="table">
+        <h3>Купити</h3>
+        
+        <ol>
+            <li ng-repeat="item in listBuy.listBuy">
+                <div ng-if="item.isVisible===true">
+                Наявно {{item.quantity}} якщиків йогурту фірми "{{item.mark}}"
+                
+                <button ng-click="listBuy.hide($index);" id = hide>Приховати</button>
+                <button ng-click="listBuy.removeItem($index);" id="removeItem">Видалити</button>
+            </li>
+        </ol>
+    </div>>
+    </div>
+</body>
+</html>
